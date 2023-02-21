@@ -22,25 +22,18 @@ def inference(user_sentence:str)-> List:
         a list of pandas dataframe most similar rows
     """
    
-    #Simple preprocessing user sentence
-    preprocessed_sentence=gensim.utils.simple_preprocess(user_sentence, deacc=True)
+    preprocessed_sentence = gensim.utils.simple_preprocess(user_sentence, deacc=True)           #Simple preprocessing user sentence
+    is_noun = lambda pos: pos[:2] == 'NN'                                                       #Lambda function to get only nouns
 
-    #Lambda function to get only nouns
-    is_noun = lambda pos: pos[:2] == 'NN'
-
-    #Applying Lambda function and removing duplicates
-    nouns = [word for (word, pos) in nltk.pos_tag(preprocessed_sentence) if is_noun(pos)] 
+    nouns = [word for (word, pos) in nltk.pos_tag(preprocessed_sentence) if is_noun(pos)]       #Applying Lambda function and removing duplicates
     nouns = set(nouns)
 
-    #Infering
-    v1 = model.infer_vector(list(nouns))
+    v1 = model.infer_vector(list(nouns))                                                        #Infering
     similar_docs = model.dv.most_similar(positive=[v1])
 
-    #Getting indexes of most similar lines
-    indexes=[i[0] for i in similar_docs]
+    indexes=[i[0] for i in similar_docs]                                                        #Getting indexes of most similar lines
 
-    #returning recommendations
-
+    # Returning recommendations
     recommendations=[]
     for i in indexes:
         recommendations.append(df.iloc[[int(i)]])
