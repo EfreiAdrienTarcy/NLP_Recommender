@@ -1,6 +1,6 @@
 # Recipe-Chatbot
-### Team 4
-### Members : W.PONNOU, A.LEBLANC, A.TARCY, M.GONCALVES, Y. TOUHAMI-KADIRI
+Team 4
+Members : W.PONNOU, A.LEBLANC, A.TARCY, M.GONCALVES, Y. TOUHAMI-KADIRI
 
 [! https://img.shields.io/github/license/mathys.goncalves@efrei.net/Recipe-Chatbot] [! https://img.shields.io/badge/Made%20at-Starschema-red]
 A short description of the project.
