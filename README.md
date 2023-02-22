@@ -15,3 +15,9 @@ Python executable from the virtualenv.
 Use `make image` to create a Docker image. Then, follow [these 
 instructions](https://www.chrisvoncsefalvay.com/2019/08/28/deploying-dash-on-amazon-ecs/) 
 to deploy the image on ECS.
+
+## Possible improvments for the future
+
+- Allow mandatory ingredients or the removal of ingredients among the recommendations of recipes
+- Implement a cache system for the web interface to avoid reloading elements when it is unecessary
+- Create several recipes from a single long list of ingredients
